@@ -29,39 +29,39 @@ console.log(numbers.length); // output: 10
 ### 2. ຂຽນຄໍາສັ່ງນັບຈໍານວນ ແລະ ສະແດງ array number ທິ່ເປັນຄ່າ[-] ອອກທາງ console ⚡️
 
 ```js
-// output: [-1,-10,-20]
-// output: 3
+console.log(numbers.filter(numbers => numbers < 0)) // output: [-1,-10,-20]
+console.log(numbers.filter(numbers => numbers < 0).length) // output: 3
 ```
 
 ### 3. ຂຽນຄໍາສັ່ງນັບຈໍານວນ ແລະ ສະແດງ array number ທິ່ເປັນຄ່າ[+] ອອກທາງ console ⚡️
 
 ```js
-// output: [2, 3, 4, 90, 3.14]
-// output: 5
+console.log(numbers.filter(value => typeof value === 'number').filter(numbers => numbers > 0)) // output: [2, 3, 4, 90, 3.14]
+console.log(numbers.filter(value => typeof value === 'number').filter(numbers => numbers > 0).length) // output: 5
 ```
 
 ### 4. ຂຽນປ່ຽນຄ່າ array number ເປັນຄ່າ[+] ທັງໝົດ ແລະ ສະແດງຜົນອອກທາງ console ⚡️
 
 ```js
-let positiveNumber = [...numbers];
-// output: [2, 1, 3, 10, 4, 90, 20, 3.14]
+let positiveNumber = [numbers.filter(value => typeof value === 'number').map(numbers => Math.abs(numbers))];
+console.log(positiveNumber) // output: [2, 1, 3, 10, 4, 90, 20, 3.14]
 ```
 
 ### 5. ຂຽນປ່ຽນຄ່າ array number ເປັນຄ່າ[-] ທັງໝົດ ແລະ ສະແດງຜົນອອກທາງ console ⚡️
 
 ```js
-let negativeNumber = [...numbers];
-// output: [-2, -1, -3, -10, -4, -90, -20, -3.14]
+let negativeNumber = [numbers.filter(value => typeof value === 'number').map(numbers => -Math.abs(numbers))];
+console.log(negativeNumber) // output: [-2, -1, -3, -10, -4, -90, -20, -3.14]
 ```
 
 ### 6. ຈົ່ງຊອກຫາຜົນລວມຂອງ array numbers ທິ່ເປັນຄ່າ[+] ທັງໝົດ ແລະ ສະແດງຜົນອອກທາງ console ⚡️
 
 ```js
-// output: 102.14
+console.log(numbers.filter(value => typeof value === 'number').filter(numbers => numbers > 0).reduce((a, b) => a + b, 0)) // output: 102.14
 ```
 
 ### 7. ຈົ່ງຊອກຫາຜົນລວມຂອງ array numbers ທິ່ເປັນຄ່າ[-] ທັງໝົດ ແລະ ສະແດງຜົນອອກທາງ console ⚡️
 
 ```js
-// output: -31
+console.log(numbers.filter(numbers => numbers < 0).reduce((a, b) => a + b, 0)) // output: -31
 ```
